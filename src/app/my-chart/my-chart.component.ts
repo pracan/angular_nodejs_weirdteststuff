@@ -7,14 +7,13 @@ import { Chart } from 'chart.js';
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
-  @Input('my-id') myId = '';
-  @Input('type') type = 'bar';
   constructor() {}
 
   ngOnInit() {}
   ngAfterViewInit() {
-    const myChart = new Chart(this.myId, {
-      type: this.type,
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(this.ctx, {
+      type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
