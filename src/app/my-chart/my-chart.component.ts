@@ -12,7 +12,7 @@ export class MyChartComponent implements OnInit {
   ngOnInit() {}
   ngAfterViewInit() {
     const ctx = document.getElementById('myChart');
-    const myChart = new Chart(this.ctx, {
+    const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
