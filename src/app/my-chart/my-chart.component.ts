@@ -7,7 +7,7 @@ import { Chart } from 'chart.js';
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
-  @Input('my-id') myId = 'myChart';
+  @Input('my-id') myId = '';
   @Input('type') type = 'bar';
   constructor() {}
 
