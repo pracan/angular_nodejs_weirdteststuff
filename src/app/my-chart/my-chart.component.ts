@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart } from 'node_modules/chart.js';
+import { Component, Input, OnInit } from '@angular/core';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-my-chart',
@@ -7,11 +7,14 @@ import { Chart } from 'node_modules/chart.js';
   styleUrls: ['./my-chart.component.css'],
 })
 export class MyChartComponent implements OnInit {
+  @Input('my-id') myId = 'myChart';
+  @Input('type') type = 'bar';
   constructor() {}
 
-  ngOnInit(): void {
-    const myChart = new Chart('myChart', {
-      type: 'bar',
+  ngOnInit() {}
+  ngAfterViewInit() {
+    const myChart = new Chart(this.myId, {
+      type: this.type,
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [
